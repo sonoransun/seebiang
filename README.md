@@ -1,5 +1,8 @@
 # See Biáng!
 
+<img src="Biáng-v1.svg" alt="BiangBiang" width="512">
+<br />
+
 Static and animated stroke-by-stroke visualisations of the Biáng character —
 an unusually complex Chinese character famous for the Shaanxi noodle dish it
 names — in every variant form catalogued on
