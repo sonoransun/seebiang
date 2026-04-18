@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>See Biáng! — stroke tracer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body { margin: 0; font-family: system-ui, sans-serif; background: #fafaf7; color: #161614; }
+      header { padding: 0.75rem 1rem; border-bottom: 1px solid #d8d6cf; background: #fff; display: flex; gap: 1rem; align-items: center; }
+      header h1 { margin: 0; font-size: 1.1rem; }
+      header label { font-size: 0.9rem; color: #65635c; }
+      header input, header button { font: inherit; padding: 0.3rem 0.5rem; }
+      #app { display: grid; grid-template-columns: 1fr 320px; gap: 1rem; padding: 1rem; }
+      #canvas {
+        background: #fff;
+        border: 1px solid #d8d6cf;
+        border-radius: 10px;
+        aspect-ratio: 1 / 1;
+        width: 100%;
+        position: relative;
+        touch-action: none;
+      }
+      #canvas svg { width: 100%; height: 100%; display: block; }
+      #reference { opacity: 0.25; pointer-events: none; }
+      aside { background: #fff; border: 1px solid #d8d6cf; border-radius: 10px; padding: 1rem; }
+      aside h2 { margin-top: 0; font-size: 1rem; }
+      ol.strokes { padding-left: 1.25rem; margin: 0.5rem 0; font-size: 0.9rem; max-height: 320px; overflow-y: auto; }
+      ol.strokes li { margin: 0.15rem 0; }
+      .actions { display: flex; gap: 0.5rem; margin-top: 0.75rem; flex-wrap: wrap; }
+      .actions button { padding: 0.4rem 0.8rem; }
+      textarea { width: 100%; height: 8rem; font-family: ui-monospace, monospace; font-size: 0.85rem; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Stroke tracer</h1>
+      <label>
+        Reference SVG:
+        <input id="ref-path" type="text" size="48" placeholder="/@fs/.../data/reference/noto/U+30EDE.svg" />
+      </label>
+      <button id="load-ref">Load</button>
+      <label>
+        Character id:
+        <input id="char-id" type="text" size="22" placeholder="biang-trad-u30EDE" />
+      </label>
+    </header>
+    <div id="app">
+      <div id="canvas" aria-label="Stroke tracing canvas">
+        <svg id="reference" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"></svg>
+        <svg id="ink" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;"></svg>
+      </div>
+      <aside>
+        <h2>Strokes</h2>
+        <p id="hint" style="color:#65635c; font-size:0.85rem;">
+          Click-and-drag on the canvas to trace a stroke. Release to commit.
+          Every drag adds one stroke in order.
+        </p>
+        <ol class="strokes" id="stroke-list"></ol>
+        <div class="actions">
+          <button id="undo">Undo</button>
+          <button id="clear">Clear</button>
+          <button id="export">Export JSON</button>
+        </div>
+        <textarea id="output" spellcheck="false" placeholder="Exported JSON appears here"></textarea>
+        <p style="font-size:0.8rem; color:#65635c;">
+          Copy the JSON into <code>data/characters/&lt;id&gt;.json</code> and run
+          <code>seebiang validate</code> to lint it. Remember: hand-digitised
+          strokes must follow canonical stroke order
+          (cross-check Wiktionary / Unihan).
+        </p>
+      </aside>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

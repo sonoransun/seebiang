@@ -1,0 +1,221 @@
+# ---------------------------------------------------------------------------
+# Project-specific (derived / downloaded artefacts)
+# ---------------------------------------------------------------------------
+outputs/
+tools/.fonts/
+web/public/data/
+
+# ---------------------------------------------------------------------------
+# Secrets & credentials — never commit
+# ---------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+credentials.json
+secrets.json
+*.secret
+.netrc
+.npmrc.local
+
+# ---------------------------------------------------------------------------
+# Logs
+# ---------------------------------------------------------------------------
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ---------------------------------------------------------------------------
+# Operating system cruft
+# ---------------------------------------------------------------------------
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+.DocumentRevisions-V100
+.TemporaryItems
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+Icon?
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ---------------------------------------------------------------------------
+# Editors & IDEs
+# ---------------------------------------------------------------------------
+# VS Code (allow-list shared settings if needed)
+.vscode/
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+.history/
+# JetBrains
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+# Vim / Neovim
+*.swp
+*.swo
+*.swn
+Session.vim
+.netrwhist
+# Emacs
+\#*\#
+.\#*
+*.elc
+auto-save-list
+# Sublime
+*.sublime-workspace
+*.sublime-project
+# Eclipse
+.project
+.classpath
+.settings/
+# Xcode
+xcuserdata/
+*.xcuserstate
+
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+# Virtual envs
+.venv/
+venv/
+env/
+ENV/
+.python-version
+# Distribution / packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+pip-log.txt
+pip-delete-this-directory.txt
+# Testing / type-checking / linting caches
+.pytest_cache/
+.tox/
+.nox/
+.cache/
+.hypothesis/
+.mypy_cache/
+.pyre/
+.pytype/
+.ruff_cache/
+.dmypy.json
+dmypy.json
+# Coverage
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+*.cover
+*.py,cover
+nosetests.xml
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ---------------------------------------------------------------------------
+# Node.js / npm / pnpm / yarn
+# ---------------------------------------------------------------------------
+node_modules/
+jspm_packages/
+.npm/
+.yarn/cache
+.yarn/install-state.gz
+.yarn/unplugged
+.yarn/build-state.yml
+.pnp.*
+.pnpm-store/
+.eslintcache
+.stylelintcache
+.node_repl_history
+*.tgz
+.grunt/
+bower_components/
+
+# ---------------------------------------------------------------------------
+# TypeScript / bundlers
+# ---------------------------------------------------------------------------
+*.tsbuildinfo
+.tscache/
+# Vite
+.vite/
+vite.config.*.timestamp-*
+# Webpack / Parcel / Rollup / esbuild / Turbopack
+.parcel-cache/
+.rpt2_cache/
+.rts2_cache*/
+.turbo/
+# Framework outputs (generic; safe to list even if unused)
+.next/
+.nuxt/
+.svelte-kit/
+.astro/
+.docusaurus/
+.vuepress/dist/
+
+# ---------------------------------------------------------------------------
+# Test runners & browser automation
+# ---------------------------------------------------------------------------
+coverage/
+.nyc_output/
+.playwright/
+playwright-report/
+playwright/.cache/
+blob-report/
+test-results/
+
+# ---------------------------------------------------------------------------
+# Local-only tooling config
+# ---------------------------------------------------------------------------
+# Claude Code: commit shared settings, ignore personal overrides
+.claude/settings.local.json
+.claude/*.local.json
+# direnv
+.envrc.local
+# ---------------------------------------------------------------------------

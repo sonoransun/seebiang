@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seebiang.local/schema/character.schema.json",
+  "title": "Biáng character variant",
+  "type": "object",
+  "required": ["id", "variantName", "source", "canvas", "strokeCount", "strokes", "schemaVersion"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$",
+      "description": "Stable slug; drives filenames."
+    },
+    "codepoint": {
+      "type": ["string", "null"],
+      "pattern": "^U\\+[0-9A-F]{4,6}$",
+      "description": "Unicode codepoint if one exists, else null."
+    },
+    "variantName": { "type": "string", "minLength": 1 },
+    "description": { "type": "string" },
+    "source": {
+      "type": "object",
+      "required": ["kind", "license"],
+      "additionalProperties": false,
+      "properties": {
+        "kind": { "enum": ["noto-serif-cjk", "noto-sans-cjk", "wikimedia", "hand-crafted"] },
+        "url": { "type": "string", "format": "uri" },
+        "license": { "type": "string" },
+        "author": { "type": "string" },
+        "attribution": { "type": "string" },
+        "retrieved": { "type": "string", "format": "date" }
+      }
+    },
+    "canvas": {
+      "type": "object",
+      "required": ["width", "height"],
+      "additionalProperties": false,
+      "properties": {
+        "width": { "type": "integer", "minimum": 1 },
+        "height": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "strokeCount": { "type": "integer", "minimum": 1 },
+    "strokes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["index", "path"],
+        "additionalProperties": false,
+        "properties": {
+          "index": { "type": "integer", "minimum": 0 },
+          "path": { "type": "string", "minLength": 1, "description": "SVG path-data string." },
+          "median": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": { "type": "number" },
+              "minItems": 2,
+              "maxItems": 2
+            }
+          },
+          "radicalHint": { "type": "string" },
+          "durationMs": { "type": "integer", "minimum": 1 }
+        }
+      }
+    },
+    "schemaVersion": { "const": 1 }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "seebiang-web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Web viewer and animator for See Biáng! character variants.",
+  "scripts": {
+    "dev": "vite",
+    "build": "node scripts/copy-data.mjs && tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "sync-data": "node scripts/copy-data.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "vite": "^5.2.0"
+  },
+  "dependencies": {
+    "ajv": "^8.12.0"
+  }
+}

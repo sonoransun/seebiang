@@ -1,0 +1,11 @@
+Data files under data/ that declare a Wikimedia-derived source are released
+under the Creative Commons Attribution-ShareAlike 4.0 International License
+(CC-BY-SA-4.0), consistent with their upstream licence.
+
+Full text: https://creativecommons.org/licenses/by-sa/4.0/legalcode
+
+Data files that declare a non-Wikimedia source use the licence named in their
+`source.license` field. Data files with `source.kind == "hand-crafted"` and no
+other constraint are released under CC0-1.0.
+
+See ATTRIBUTIONS.md for per-file provenance.

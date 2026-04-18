@@ -1,0 +1,34 @@
+{
+  "id": "toy-trio",
+  "codepoint": "U+4E09",
+  "variantName": "Three (三) — toy fixture",
+  "description": "Three-stroke glyph used as a pipeline smoke-test fixture. Not a biáng variant; present so the schema, validator, Python exporter and web animator can be exercised end-to-end before the real variants are digitised.",
+  "source": {
+    "kind": "hand-crafted",
+    "license": "CC0-1.0",
+    "attribution": "Hand-crafted by the See Biáng! project as a pipeline fixture."
+  },
+  "canvas": { "width": 1024, "height": 1024 },
+  "strokeCount": 3,
+  "strokes": [
+    {
+      "index": 0,
+      "path": "M 180 260 L 820 240",
+      "median": [[180, 260], [500, 250], [820, 240]],
+      "durationMs": 600
+    },
+    {
+      "index": 1,
+      "path": "M 300 508 L 700 496",
+      "median": [[300, 508], [500, 502], [700, 496]],
+      "durationMs": 500
+    },
+    {
+      "index": 2,
+      "path": "M 120 780 L 900 760",
+      "median": [[120, 780], [500, 770], [900, 760]],
+      "durationMs": 700
+    }
+  ],
+  "schemaVersion": 1
+}
